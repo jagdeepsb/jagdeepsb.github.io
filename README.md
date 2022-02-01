@@ -1,6 +1,6 @@
-# Otilia Stretcu's personal webpage
+# Jagdeep's personal website.
 
-This is the personal website of Otilia Stretcu, which can be visualized at [https://otiliastr.github.io/](https://otiliastr.github.io/).
+See it here [https://jagdeepsb.github.io/](https://jagdeepsb.github.io/).
 
 ## How to use this template for your website
 
