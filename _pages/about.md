@@ -3,13 +3,14 @@ layout: page
 permalink: /
 title: about
 nav: about
+years: [2021]
 
-<!--description: <a href="https://ai.google/" target="_blank">Google AI</a> -->
-address: <a href="https://www.google.com/maps/place/Googleplex/@37.4220656,-122.0862837,17z/data=!3m1!4b1!4m5!3m4!1s0x808fba02425dad8f:0x6c296c66619367e0!8m2!3d37.4220656!4d-122.0840897" class="page-description" target="_blank">Googleplex, Mountain View, California, USA </a>
+# <!--description: <a href="https://ai.google/" target="_blank">Google AI</a> -->
+# address: <a href="https://www.google.com/maps/place/Googleplex/@37.4220656,-122.0862837,17z/data=!3m1!4b1!4m5!3m4!1s0x808fba02425dad8f:0x6c296c66619367e0!8m2!3d37.4220656!4d-122.0840897" class="page-description" target="_blank">Googleplex, Mountain View, California, USA </a>
 ---
 
 <div class="col p-0 pt-4 pb-4">
-  <h1 class="pb-3 title text-left font-weight-bold">Otilia Stretcu</h1>
+  <h1 class="pb-3 title text-left font-weight-bold" id="ABOUT">Jagdeep Bhatia</h1>
   <h6 class="m-0 mb-2" style="font-size: 0.83em;">{{ page.description }}</h6>
   {% if page.address %}
       <h6 class="m-0 mb-2" style="font-size: 0.83em;">{{ page.address }}</h6>
@@ -21,40 +22,45 @@ address: <a href="https://www.google.com/maps/place/Googleplex/@37.4220656,-122.
 <div style="display: flex; flex-wrap: wrap;">
     <div class="text-justify p-0">
         <div class="col-xs-12 col-sm-6 p-0 pt-2 pb-sm-2 pb-4 pl-sm-4 text-center" style="float: right;">
-          <img class="profile-img img-responsive" src="{{ 'prof_pic.jpg' | prepend: '/assets/img/' | prepend: site.baseurl | prepend: site.url }}">
+          <img class="profile-img img-responsive" style="width: 90%;" src="{{ 'me.jpg' | prepend: '/assets/img/' | prepend: site.baseurl | prepend: site.url }}">
         </div>
 
         <p>
-            I am a Research Scientist at <a href="https://ai.google/" target="_blank">Google AI</a> in Mountain View, California, working on machine learning research.
+            Hey there! I'm Jagdeep, a sophomore at MIT studying computer science. 
         </p>
-        
+
         <p>
-            Previously, I was a PhD student in the <a href="http://www.ml.cmu.edu/" target="_blank">Machine Learning Department</a> at <a href="http://www.cmu.edu/" target="_blank">Carnegie Mellon University</a>, co-advised by <a href="http://www.cs.cmu.edu/~tom/" target="_blank">Tom Mitchell</a> and <a href="http://www.cs.cmu.edu/~bapoczos/" target="_blank">Barnabàs Pòczos</a>.
-            My PhD research focused on developing algorithms for machine learning, mainly focused on semi-supervised learning, curriculum learning, multitask learning, and graph-based problems.
-            I am also passionate about applying machine learning methods in neuroscience, in order to study how the brain understands language and controls speech.
-            Previously, I did some research in Computer Vision, with the goal of detecting and tracking objects in videos.
+            I'm interested in thinking about some of the more nuanced problems in AI (interpretability, robustness, generalizability) and applying those ideas to designing intelligent embodied systems. I'm really proud of 
+            <a href="https://evolutiongym.github.io/" target="_blank">EvoGym</a>,
+            a benchmark for design and control co-optimization for voxel-based soft robots which I built with the 
+            <a href="https://cdfg.mit.edu/" target="_blank">Computational Design and Fabrication Group</a>
+            at MIT. I spent this winter designing debiasing algorithms at 
+            <a href="https://themisai.io/" target="_blank">Themis AI</a>,
+            and this summer, I'll be working on similar challenges at 
+            <a href="https://scale.com/" target="_blank">Scale</a>. My work has been featured in Scientific American, Wired, Forbes, IEEE Spectrum, and MIT News. 
         </p>
     </div>
 </div>
 
 <div class="col text-justify p-0">
     <p>
-        Before I joined CMU, I graduated with an <a href="https://www.cst.cam.ac.uk/admissions/acs" target="_blank">M.Phil. in Advanced Computer Science</a>
-        from the <a href="https://www.cam.ac.uk/" target="_blank">University of Cambridge</a>, UK.
-        In my Master's thesis I used Machine Learning methods to detect and align chromosomes in microscope images,
-        advised by <a href="https://www.cl.cam.ac.uk/~pl219/" target="_blank">Pietro Lió</a>.
+        In my free time I love running, playing card games, and making bad puns.
     </p>
 </div>
 
 <!-- News -->
-<div class="news mt-3 p-0">
+
+<div class="news mt-3 p-0" id="NEWS">
   <h1 class="title mb-4 p-0">news</h1>
   {% assign news = site.news | reverse %}
   {% for item in news limit: site.news_limit %}
     <div class="row p-0">
       <div class="col-sm-2 p-0">
-        <span class="badge light-green darken-1 font-weight-bold text-uppercase align-middle date ml-3">
+        <!-- <span class="badge light-green darken-1 font-weight-bold text-uppercase align-middle date ml-3">
           {{ item.date | date: "%b %-d, %Y" }}
+        </span> -->
+        <span class="badge burgundy font-weight-bold text-uppercase align-middle date ml-3">
+          {{ item.date | date: "%b %Y" }}
         </span>
       </div>
       <div class="col-sm-10 mt-2 mt-sm-0 ml-3 ml-md-0 p-0 font-weight-light text">
@@ -63,3 +69,20 @@ address: <a href="https://www.google.com/maps/place/Googleplex/@37.4220656,-122.
     </div>
   {% endfor %}
 </div>
+
+<!-- publications -->
+
+<br/>
+<div class="news mt-3 p-0" id="PUB">
+  <h1 class="title mb-4 p-0">publications</h1>
+  {% for y in page.years %}
+    <div class="row m-0 p-0" style="border-top: 1px solid #ddd; flex-direction: row-reverse;">
+      <div class="col-sm-1 mt-2 p-0 pr-1">
+        <h3 class="bibliography-year">{{y}}</h3>
+      </div>
+      <div class="col-sm-11 p-0">
+        {% bibliography -f papers -q @*[year={{y}}]* %}
+      </div>
+    </div>
+</div>
+{% endfor %}

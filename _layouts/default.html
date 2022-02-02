@@ -21,7 +21,7 @@
   <nav id="navbar" class="navbar fixed-top navbar-expand-md grey lighten-5 z-depth-1 navbar-light">
     <div class="container-fluid p-0">
       {% if page.title != "about" %}
-        <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl | prepend: site.url }}/"><span class="font-weight-bold">Otilia</span> Stretcu</a>
+        <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl | prepend: site.url }}/"><span class="font-weight-bold">Jagdeep</span> S Bhatia</a>
       {% else %}
         <div class="row ml-1 ml-sm-0">
           <span class="contact-icon text-center" style="line-height: 1em;">
@@ -29,7 +29,7 @@
             <a href="https://scholar.google.com/citations?userid={{ site.scholar_userid }}&user={{ site.scholar_userid }}" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square gs-icon"></i></a>
             <a href="https://www.github.com/{{ site.github_username }}" target="_blank" title="GitHub"><i class="fab fa-github-square gh-icon"></i></a>
             <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank" title="LinkedIn"><i class="fab fa-linkedin li-icon"></i></a>
-            <a href="https://www.facebook.com/{{ site.facebook_username }}" target="_blank" title="Facebook"><i class="fab fa-facebook-square fb-icon"></i></a>
+            <!-- <a href="https://www.facebook.com/{{ site.facebook_username }}" target="_blank" title="Facebook"><i class="fab fa-facebook-square fb-icon"></i></a> -->
             <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" title="Twitter"><i class="fab fa-twitter-square tw-icon"></i></a>
           </span>
         </div>
@@ -39,15 +39,33 @@
       </button>
       <div class="collapse navbar-collapse text-right" id="navbarNav">
         <ul class="navbar-nav ml-auto flex-nowrap">
-          <li class="nav-item {% if page.title == "about" %}navbar-active font-weight-bold{% endif %}">
-            <a class="nav-link" href="{{ site.baseurl | prepend: site.url }}/">
+          <li class="nav-item navbar-active font-weight-bold" id="NAV_ABOUT">
+            <a class="nav-link" href="#ABOUT">
               about
               {% if page.title == "about" %}
                 <span class="sr-only">(current)</span>
               {% endif %}
             </a>
           </li>
-          {% for p in site.pages %}
+          <li class="nav-item" id="NAV_NEWS">
+            <a class="nav-link" href="#NEWS">
+              news
+            </a>
+          </li>
+          <li class="nav-item" id="NAV_PUB">
+            <a class="nav-link" href="#PUB">
+              publications
+            </a>
+          </li>
+          <!-- <li class="nav-item {% if page.title == "about" %}navbar-active font-weight-bold{% endif %}">
+            <a class="nav-link" href="{{ site.baseurl | prepend: site.url }}/">
+              about
+              {% if page.title == "about" %}
+                <span class="sr-only">(current)</span>
+              {% endif %}
+            </a>
+          </li> -->
+          <!-- {% for p in site.pages %}
             {% if p.title and p.url != "/" %}
               <li class="nav-item {% if page.nav == p.nav %}navbar-active font-weight-bold{% endif %}">
                   <a class="nav-link" href="{{ p.url | prepend: site.baseurl | prepend: site.url }}">
@@ -58,7 +76,7 @@
                   </a>
               </li>
             {% endif %}
-          {% endfor %}
+          {% endfor %} -->
         </ul>
       </div>
     </div>
@@ -143,6 +161,65 @@
         });
       }
     });
+  </script>
+
+
+  <!-- Scrolling Nav Elements -->
+  <script type="text/javascript">
+    var selectors = ['#ABOUT', '#NEWS', '#PUB'];
+    var menu_items = ['#NAV_ABOUT', '#NAV_NEWS', '#NAV_PUB'];
+
+    // $(document).ready(function() {
+    //   $(".nav li a").removeClass("active");
+    // });
+
+    $('nav div div li a').on('click', function() {
+      var scrollAnchor = $(this).attr('data-scroll'),
+        scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top - 28;
+      $('body,html').animate({
+        scrollTop: scrollPoint
+      }, 500);
+      return false;
+    })
+
+    function activate(element){
+      $(element).addClass('navbar-active');
+      $(element).addClass('font-weight-bold');
+    }
+    function deactivate(element){
+      $(element).removeClass('navbar-active');
+      $(element).removeClass('font-weight-bold');
+    }
+
+
+    $(window).scroll(function() {
+      var windscroll = $(window).scrollTop();
+      var max_scroll = $(document).height() - $(window).height();
+      var last = selectors.length - 1;
+      var total_content_length = $(selectors[last]).offset().top + 100; //$(selectors[last]).height();
+      if ($(selectors[last]).height() > $(window).height()/2){
+        total_content_length = $(selectors[last]).offset().top + $(selectors[last]).height();
+      }
+
+      curr_selector = 0;
+      for (var i = 0; i < selectors.length; i++){
+        var selector_scroll = $(selectors[i]).offset().top - 50;
+        if (windscroll/max_scroll >= selector_scroll/total_content_length){
+          curr_selector = i;
+        }
+      }
+      //console.log("cscroll: " + windscroll + "| sel: " + curr_selector +  " | " + ($(selectors[0]).offset().top - 50) + " | " + ($(selectors[1]).offset().top - 50) + " | " + max_scroll + " | " + total_content_length);
+      // console.log(curr_selector);
+      for (var i = 0; i < selectors.length; i++){
+        if (curr_selector == i){
+          activate(menu_items[i]);
+        }
+        else{
+          deactivate(menu_items[i]);
+        }
+      }
+
+    }).scroll();
   </script>
 
   <!-- Code Syntax Highlighting -->

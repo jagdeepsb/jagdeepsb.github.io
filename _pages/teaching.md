@@ -4,6 +4,7 @@ permalink: /teaching/
 title: teaching
 nav: teaching
 description: classes, workshops, and teaching material
+published: false
 ---
 
 <h3 class="mt-4">Carnegie Mellon University</h3>
@@ -15,7 +16,10 @@ description: classes, workshops, and teaching material
         <h5 class="font-weight-bold">Introduction to Machine Learning</h5>
       </div>
       <div class="col-sm-2 text-left text-sm-right">
-        <span class="badge font-weight-bold light-green darken-1 text-uppercase align-middle"  href="https://www.cs.cmu.edu/~pradeepr/courses/701/2018-spring/" target="_blank">
+        <!-- <span class="badge font-weight-bold light-green darken-1 text-uppercase align-middle"  href="https://www.cs.cmu.edu/~pradeepr/courses/701/2018-spring/" target="_blank">
+            10-701
+        </span> -->
+        <span class="badge font-weight-bold burgundy text-uppercase align-middle"  href="https://www.cs.cmu.edu/~pradeepr/courses/701/2018-spring/" target="_blank">
             10-701
         </span>
       </div>
@@ -37,7 +41,10 @@ description: classes, workshops, and teaching material
         <h5 class="font-weight-bold">Topics in Deep Learning</h5>
       </div>
       <div class="col-sm-2 text-left text-sm-right">
-        <span class="badge font-weight-bold light-green darken-1 text-uppercase align-middle">
+        <!-- <span class="badge font-weight-bold light-green darken-1 text-uppercase align-middle">
+            10-707
+        </span> -->
+        <span class="badge font-weight-bold burgundy text-uppercase align-middle">
             10-707
         </span>
       </div>

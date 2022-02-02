@@ -288,6 +288,8 @@ $black-base: #000 !default;
 $white-base: #fff !default;
 $foggy-grey: #4f4f4f !default;
 
+$burgundy-base: #ba263f !default;
+
 $mdb-colors-1: () !default;
 $mdb-colors-1: map-merge((
   "mdb-color": (
@@ -599,6 +601,9 @@ $mdb-colors-1: map-merge((
   ),
   "white": (
     "base":  $white-base
+  ),
+  "burgundy": (
+    "base":  $burgundy-base
   )
 ), $mdb-colors-1);
 
