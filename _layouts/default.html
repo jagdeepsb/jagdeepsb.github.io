@@ -40,20 +40,20 @@
       <div class="collapse navbar-collapse text-right" id="navbarNav">
         <ul class="navbar-nav ml-auto flex-nowrap">
           <li class="nav-item navbar-active font-weight-bold" id="NAV_ABOUT">
-            <a class="nav-link" href="#ABOUT">
+            <a class="nav-link"> <!-- href="#ABOUT"> -->
               about
-              {% if page.title == "about" %}
+              <!-- {% if page.title == "about" %}
                 <span class="sr-only">(current)</span>
-              {% endif %}
+              {% endif %} -->
             </a>
           </li>
           <li class="nav-item" id="NAV_NEWS">
-            <a class="nav-link" href="#NEWS">
+            <a class="nav-link">  <!-- href="#NEWS"> -->
               news
             </a>
           </li>
           <li class="nav-item" id="NAV_PUB">
-            <a class="nav-link" href="#PUB">
+            <a class="nav-link"> <!-- href="#PUB"> -->
               publications
             </a>
           </li>
@@ -173,10 +173,24 @@
     //   $(".nav li a").removeClass("active");
     // });
 
-    $('nav div div li a').on('click', function() {
-      var scrollAnchor = $(this).attr('data-scroll'),
-        scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top - 28;
-      $('body,html').animate({
+    $('nav div div li').on('click', function() {
+        console.log(this.id)
+
+        target_id = '#' + this.id;
+        target_id_idx = 0;
+        for (var i = 0; i < menu_items.length; i++){
+          if (menu_items[i] == target_id){
+            target_id_idx = i;
+            break;
+          }
+        }
+      // var scrollAnchor = $(this).attr('data-scroll'),
+        // scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top - 28;
+        var scrollPoint = $(selectors[target_id_idx]).offset().top - 75;
+        if (target_id_idx == 0){
+          scrollPoint = 0;
+        }
+        $('body,html').animate({
         scrollTop: scrollPoint
       }, 500);
       return false;
