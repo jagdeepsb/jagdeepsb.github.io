@@ -3,7 +3,7 @@ layout: page
 permalink: /
 title: about
 nav: about
-years: [2021]
+years: [2022, 2021]
 
 # <!--description: <a href="https://ai.google/" target="_blank">Google AI</a> -->
 # address: <a href="https://www.google.com/maps/place/Googleplex/@37.4220656,-122.0862837,17z/data=!3m1!4b1!4m5!3m4!1s0x808fba02425dad8f:0x6c296c66619367e0!8m2!3d37.4220656!4d-122.0840897" class="page-description" target="_blank">Googleplex, Mountain View, California, USA </a>
@@ -84,5 +84,5 @@ years: [2021]
         {% bibliography -f papers -q @*[year={{y}}]* %}
       </div>
     </div>
+  {% endfor %}
 </div>
-{% endfor %}
