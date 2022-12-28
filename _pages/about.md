@@ -28,7 +28,7 @@ years: [2022, 2021]
         </div>
       </div>
       <h3 class="pb-1" id="ABOUT">Jagdeep S. Bhatia</h3>
-      <h5 class="pb-3"><i class="fas fa-robot"></i> + <i class="fas fa-project-diagram"></i> @ MIT</h5>
+      <h5 class="pb-3"><i class="fas fa-robot"></i> &nbsp; + &nbsp; <i class="fas fa-project-diagram" style="font-size: .67em;"></i>&nbsp; @ &nbsp; MIT</h5>
       <div style="">
         <h6 class="pb-1 text-left">Currently:&nbsp;&nbsp;
           <a href="https://www.mit.edu/" target="_blank">MIT</a>&nbsp;&nbsp;|&nbsp;
