@@ -1,7 +1,7 @@
 @import 'mdb/mdb';
 @import '_mixins';
 
-$max-page-width: 800px;
+$max-page-width: 1000px;
 
 body {
   // Padding for the navigation bar.
@@ -189,4 +189,60 @@ progress {
       font-size: 14px;
     }
   }
+}
+
+/////////////
+// I ADDED //
+/////////////
+
+.about-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.about-column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+}
+
+.image-about-column {
+  // background-color: blue;
+  align-items: center;
+  // justify-content: center;
+  // height: 100px;
+  // flex: 1;
+}
+
+.summary-about-column {
+  // background-color: green;
+  // height: 100px;
+  // flex: 2;
+}
+
+@media screen and (min-width: 600px) {
+  .image-about-column {
+    flex: 1
+  }
+
+  .summary-about-column {
+    flex: 2
+  }
+}
+
+.image-cropper {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  // padding: 25px 50px 75px;
+}
+
+.image-cropped {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
 }
