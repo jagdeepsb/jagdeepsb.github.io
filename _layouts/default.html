@@ -21,6 +21,9 @@
   <!-- Fonts and Icons -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons" />
 
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="{{ '/assets/img/favicon3.ico' | prepend: site.baseurl | prepend: site.url }}" />
+
   <!-- CSS Files -->
   <link rel="stylesheet" href="{{ '/assets/css/all.min.css' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="stylesheet" href="{{ '/assets/css/academicons.min.css' | prepend: site.baseurl | prepend: site.url }}">
@@ -63,9 +66,14 @@
               news
             </a>
           </li>
-          <li class="nav-item" id="NAV_PUB">
+          <li class="nav-item" id="NAV_PROJ">
             <a class="nav-link"> <!-- href="#PUB"> -->
-              publications
+              projects
+            </a>
+          </li>
+          <li class="nav-item" id="NAV_MAKE">
+            <a class="nav-link">
+              fun!
             </a>
           </li>
           <!-- <li class="nav-item {% if page.title == "about" %}navbar-active font-weight-bold{% endif %}">
@@ -107,10 +115,11 @@
 
   <!-- Footer -->
   <footer>
-    &copy; Copyright {{ site.time | date: '%Y' }} {{ site.name }}.
-    {{ site.footer_text }}
+    <!-- &copy; Copyright {{ site.time | date: '%Y' }} {{ site.name }}. -->
+    <!-- {{ site.footer_text }} -->
     {% if site.last_updated %}
-      Last updated: {{ site.last_updated }}.
+      <!-- Last updated: {{ site.last_updated }}. -->
+      Last updated: {{ site.time | date: '%b'}} {{ site.time | date: '%Y' }}.
     {% endif %}
   </footer>
 
@@ -177,8 +186,8 @@
 
   <!-- Scrolling Nav Elements -->
   <script type="text/javascript">
-    var selectors = ['#ABOUT', '#NEWS', '#PUB'];
-    var menu_items = ['#NAV_ABOUT', '#NAV_NEWS', '#NAV_PUB'];
+    var selectors = ['#ABOUT', '#NEWS', '#PROJ', '#MAKE'];
+    var menu_items = ['#NAV_ABOUT', '#NAV_NEWS', '#NAV_PROJ', '#NAV_MAKE'];
 
     // $(document).ready(function() {
     //   $(".nav li a").removeClass("active");

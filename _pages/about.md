@@ -3,7 +3,7 @@ layout: page
 permalink: /
 title: about
 nav: about
-years: [2022, 2021]
+# years: [2022, 2021]
 
 # <!--description: <a href="https://ai.google/" target="_blank">Google AI</a> -->
 # address: <a href="https://www.google.com/maps/place/Googleplex/@37.4220656,-122.0862837,17z/data=!3m1!4b1!4m5!3m4!1s0x808fba02425dad8f:0x6c296c66619367e0!8m2!3d37.4220656!4d-122.0840897" class="page-description" target="_blank">Googleplex, Mountain View, California, USA </a>
@@ -99,10 +99,13 @@ years: [2022, 2021]
 
 <!-- News -->
 
-<div class="news mt-3 p-0" id="NEWS">
+<div class="news mt-3 p-0" style="width: 85%" id="NEWS">
   <h1 class="title mb-4 p-0">news</h1>
   {% assign news = site.news | reverse %}
   {% for item in news limit: site.news_limit %}
+  {% if item.hide %}
+    {% continue %}
+  {% endif %}
     <div class="row p-0">
       <div class="col-sm-2 p-0">
         <!-- <span class="badge light-green darken-1 font-weight-bold text-uppercase align-middle date ml-3">
@@ -112,16 +115,117 @@ years: [2022, 2021]
           {{ item.date | date: "%b %Y" }}
         </span>
       </div>
-      <div class="col-sm-10 mt-2 mt-sm-0 ml-3 ml-md-0 p-0 font-weight-light text">
+      <div class="col-sm-10 mt-2 mt-sm-0 ml-3 ml-md-0 p-0 font-weight-normal text">
         <p>{{ item.content | remove: '<p>' | remove: '</p>' | emojify }}</p>
       </div>
     </div>
   {% endfor %}
 </div>
 
+<!-- Projects -->
+
+<div class="news mt-3 p-0" id="PROJ">
+  <h1 class="title mt-5 mb-5 p-0">projects</h1>
+  <div class="pl-3 pr-3">
+    {% assign proj = site.listprojects | reverse %}
+    {% for item in proj %}
+      <div class="row mt-2 mb-4">
+        <!-- First column -->
+        <div class="col-sm-8 mt-2 mt-sm-0 ml-3 ml-md-0 pl-1 pr-1 font-weight-light text">
+          <h5 class="pt-1 font-weight-bold">{{ item.title}}</h5>
+          <!-- Badges -->
+          <div class="mb-2" style="display: flex; align-items: center;">
+            {% if item.pub %}
+            <span class="badge burgundy font-weight-bold proj-list-badge mr-1">{{ item.pub }}</span>
+            <!-- <a class="badge burgundy font-weight-bold proj-list-badge mr-1" href="{{site.data.venues[entry.pub].url}}" target="_blank">{{ item.pub }}</a> -->
+            &nbsp;&nbsp;
+            <div class="vl"></div>
+            &nbsp;&nbsp;&nbsp;
+            {% endif %}
+            {% if item.pdf %}
+              <a class="badge grey font-weight-bold mr-2 proj-list-badge" href="{{ item.pdf | prepend: '/assets/pdf/' | prepend: site.baseurl | prepend: site.url }}" target="_blank">PDF</a>
+            {% endif %}
+            {% if item.code %}
+              <a class="badge grey font-weight-bold mr-2 proj-list-badge" href="{{ item.code }}" target="_blank">Code</a>
+            {% endif %}
+            {% if item.arxiv %}
+              <a class="badge grey font-weight-bold mr-2 proj-list-badge" href="http://arxiv.org/abs/{{ item.arxiv }}" target="_blank">arXiv</a>
+            {% endif %}
+            {% if item.website %}
+              <a class="badge grey font-weight-bold mr-2 proj-list-badge" href="{{ item.website }}" target="_blank">Website</a>
+            {% endif %}
+            {% if item.video %}
+              <a class="badge grey font-weight-bold mr-2 proj-list-badge" href="{{ item.video }}" target="_blank">Video</a>
+            {% endif %}
+          </div>
+          <!-- Authors -->
+          <div class="author">
+            {% for author in item.authors %}
+              {% if forloop.length == 1 %}
+                {% if author.last contains site.scholar.last_name %}
+                  <nobr><em>{{author.first}} {{author.last}}<sup>{{author.sup}}</sup> </em>.</nobr>
+                {% else %}
+                  {% if site.data.coauthors[author.last] %}
+                    <nobr><a class="proj-list-author-a" href="{{site.data.coauthors[author.last].url}}" target="_blank">{{author.first}} {{author.last}}<sup>{{author.sup}}</sup></a>.</nobr>
+                  {% else %}
+                    <nobr>{{author.first}} {{author.last}}<sup>{{author.sup}}</sup>,</nobr>
+                  {% endif %}
+                {% endif %}
+              {% else %}
+                {% unless forloop.last %}
+                  {% if author.last contains site.scholar.last_name %}
+                    <nobr><em>{{author.first}} {{author.last}}<sup>{{author.sup}}</sup></em>,</nobr>
+                  {% else %}
+                    {% if site.data.coauthors[author.last] %}
+                      <nobr><a class="proj-list-author-a" href="{{site.data.coauthors[author.last].url}}" target="_blank">{{author.first}} {{author.last}}<sup>{{author.sup}}</sup></a>,</nobr>
+                    {% else %}
+                      <nobr>{{author.first}} {{author.last}}<sup>{{author.sup}}</sup>,</nobr>
+                    {% endif %}
+                  {% endif %}
+                {% else %}
+                  and
+                  {% if author.last == site.scholar.last_name %}
+                    <nobr><em>{{author.first}} {{author.last}}<sup>{{author.sup}}</sup></em>.</nobr>
+                  {% else %}
+                    {% if site.data.coauthors[author.last] %}
+                      <nobr><a class="proj-list-author-a" href="{{site.data.coauthors[author.last].url}}" target="_blank">{{author.first}} {{author.last}}<sup>{{author.sup}}</sup></a>.</nobr>
+                    {% else %}
+                      <nobr>{{author.first}} {{author.last}}<sup>{{author.sup}}</sup></nobr>
+                    {% endif %}
+                  {% endif %}
+                {% endunless %}
+              {% endif %}
+            {% endfor %}
+          </div>
+          <!-- Extra description -->
+          {% if item.desc %}
+            <div class="font-weight-normal mt-1">
+              <i><p class="m-0">{{ item.desc }}</p></i>
+            </div>
+          {% endif %}
+          <!-- Content -->
+          <hr style="margin-top: 8px; margin-bottom: 8px;"> 
+          <div class="font-weight-normal">
+            <p>{{ item.content | remove: '<p>' | remove: '</p>' | emojify }}</p>
+          </div>
+        </div>
+        <!-- Second Column -->
+        <div class="col-sm-4 pl-4"> 
+          <!-- <span class="badge burgundy font-weight-bold text-uppercase align-middle date ml-3">
+            {{ item.date | date: "%b %Y" }}
+          </span> -->
+          <div class="image-project-holder">
+            <img class="profile-img img-responsive project-list-img" src="{{ item.img | prepend: '/assets/img/' | prepend: site.baseurl | prepend: site.url }}">
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
 <!-- publications -->
 
-<br/>
+<!-- <br/>
 <div class="news mt-3 p-0" id="PUB">
   <h1 class="title mb-4 p-0">publications</h1>
   {% for y in page.years %}
@@ -134,4 +238,72 @@ years: [2022, 2021]
       </div>
     </div>
   {% endfor %}
+</div> -->
+
+
+<!-- Making -->
+
+<div class="news mt-3 p-0" id="MAKE">
+  <h1 class="title mt-5 mb-5 p-0">making</h1>
+  <div class="pl-3 pr-3 mt-3">
+    {% assign make = site.making | reverse %}
+    {% for item in make %}
+      <div class="row mt-2 mb-5">
+        <!-- First column -->
+        <div class="col-sm-6 pl-4 pr-5"> 
+          <!-- Carousel -->
+          <div id="carousel{{item.idd}}" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              {% for img in item.imgs %}
+                {% if forloop.first %}
+                  <li data-target="#carousel{{item.idd}}" data-slide-to="{{forloop.index0}}" class="active"></li>
+                {% else %}
+                  <li data-target="#carousel{{item.idd}}" data-slide-to="{{forloop.index0}}"></li>
+                {% endif %}
+              {% endfor %}
+            </ol>
+            <div class="carousel-inner">
+              {% for img in item.imgs %}
+                {% if forloop.first %}
+                <div class="carousel-item active carousel-div">
+                  <img src="{{ img | prepend: '/assets/img/' | prepend: site.baseurl | prepend: site.url }}" class="d-block w-100 carousel-img" alt="...">
+                </div>
+                {% else %}
+                  <div class="carousel-item carousel-div">
+                    <img src="{{ img | prepend: '/assets/img/' | prepend: site.baseurl | prepend: site.url }}" class="d-block w-100 carousel-img" alt="...">
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#carousel{{item.idd}}" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel{{item.idd}}" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+        <!-- Second Column -->
+        <div class="col-sm-6 mt-2 mt-sm-0 ml-3 ml-md-0 pl-1 pr-1 font-weight-light text">
+          <h5 class="pt-1 font-weight-bold">{{ item.title}}</h5>
+          <!-- Materials -->
+          {% if item.materials %}
+            <div>
+              <span class="bold-theme">Materials: </span>
+              <span class="font-weight-normal" >
+                <i>{{ item.materials }}</i>
+              </span>
+            </div>
+          {% endif %}
+          <!-- Content -->
+          <hr style="margin-top: 8px; margin-bottom: 8px;"> 
+          <div class="font-weight-normal">
+            <p>{{ item.content | remove: '<p>' | remove: '</p>' | emojify }}</p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
 </div>

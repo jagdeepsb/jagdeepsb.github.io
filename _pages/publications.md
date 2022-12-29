@@ -8,7 +8,7 @@ years: [2021]
 published: False
 ---
 
-<br/>
+<!-- <br/>
 {% for y in page.years %}
   <div class="row m-0 p-0" style="border-top: 1px solid #ddd; flex-direction: row-reverse;">
     <div class="col-sm-1 mt-2 p-0 pr-1">
@@ -18,4 +18,4 @@ published: False
       {% bibliography -f papers -q @*[year={{y}}]* %}
     </div>
   </div>
-{% endfor %}
+{% endfor %} -->

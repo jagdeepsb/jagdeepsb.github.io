@@ -10,7 +10,7 @@ repository: jagdeepsb/jagdeepsb.github.io
 # footer_text: >
 #   Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
 #   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-# last_updated: true
+last_updated: true
 
 url:  # the base hostname & protocol for your site
 baseurl:  # the subpath of your site, e.g. /blog/
@@ -61,6 +61,16 @@ collections:
       layout: page
     output: true
     permalink: /news/:path/
+  listprojects:
+    defaults:
+      layout: page
+    output: true
+    permalink: /listprojects/:path/
+  making:
+    defaults:
+      layout: page
+    output: true
+    permalink: /making/:path/
   projects:
     output: true
     permalink: /projects/:path/
