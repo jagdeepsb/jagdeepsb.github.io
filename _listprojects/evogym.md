@@ -2,6 +2,7 @@
 layout: page
 date: 2021-12-15
 title: Building A Tool for Soft Robot Design and Control Co-optimization
+ref: EVOGYM
 # desc: Computer Vision research on automatic discovery of foreground objects in videos.
 img: evogym_crop.gif
 # redirect: https://sites.google.com/site/multipleframesmatching/

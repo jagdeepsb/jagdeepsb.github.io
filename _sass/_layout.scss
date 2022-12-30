@@ -278,6 +278,19 @@ progress {
   height: 20px;
 }
 
+a[data-href] {
+  color: $theme-color !important;
+  text-decoration: none;
+  // border-bottom: 1px dashed;
+
+  &:hover {
+    text-decoration: underline !important;
+    // color: $theme-color !important;
+      // text-decoration: none;
+      // border-bottom-style: solid;
+  }
+}
+
 .proj-list-author-a {
   color: $text-color !important;
   // text-decoration: none;
@@ -290,6 +303,7 @@ progress {
       // text-decoration: double !important;
       border-bottom-style: solid;
       text-decoration: none !important;
+      color: $text-color !important;
   }
 }
 
@@ -315,3 +329,4 @@ progress {
   // position: absolute;
   // bottom: 0;
 }
+

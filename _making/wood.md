@@ -3,7 +3,7 @@ layout: page
 date: 2020-12-15
 title: Raised Garden Beds
 idd: wood
-materials: wood and screws
+materials: mostly wood and screws, plus some POWER tools
 imgs: ["wood/build.jpg", "wood/miter.gif", "wood/cuts.jpg", "wood/build3.jpg"]
 ---
 

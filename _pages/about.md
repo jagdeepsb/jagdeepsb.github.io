@@ -43,11 +43,12 @@ nav: about
     <div class='about-column summary-about-column'>
       <h1 class="title mb-4 p-0">about me</h1>
       <p>
-        Hi! I'm a Junior at MIT thinking about &nbsp; 1) planning and learning in robotics and  &nbsp; 2) AI security and safety.
+        Hi! I'm a Junior at MIT thinking about &nbsp; 1) planning and learning in robotics and  &nbsp; 2) 
+        <a data-href="#NEURALHASH">AI security and safety</a>.
       </p>
       <p>
         I'm really proud of 
-        <a href="https://evolutiongym.github.io/" target="_blank">EvoGym</a>, 
+        <a data-href="#EVOGYM">EvoGym</a>, 
         a tool for soft robot design and control co-optimization which I built with 
         <a href="https://cdfg.mit.edu/" target="_blank">CDFG @ MIT</a>.
         EvoGym was featured in Scientific American, Wired, Forbes, IEEE Spectrum, and MIT News!
@@ -55,7 +56,9 @@ nav: about
       <p>
         Outside of research, I co-founded 
         <a href="https://momentumai.org/" target="_blank">Momentum AI</a>, 
-        an education nonprofit dedicated to teaching AI to underserved high-schoolers. I also enjoy running, making, playing card games, and inventing bad puns.
+        an education nonprofit dedicated to teaching AI to underserved high-schoolers. I also enjoy running, 
+        <a data-href="#MAKE">making</a>,
+        playing card games, and inventing bad puns.
       </p>
       <h5 class="pt-1 font-weight-bold">interests</h5>
       <ul>
@@ -129,7 +132,7 @@ nav: about
   <div class="pl-3 pr-3">
     {% assign proj = site.listprojects | reverse %}
     {% for item in proj %}
-      <div class="row mt-2 mb-4">
+      <div class="row mt-2 mb-4" id="{{item.ref}}">
         <!-- First column -->
         <div class="col-sm-8 mt-2 mt-sm-0 ml-3 ml-md-0 pl-1 pr-1 font-weight-light text">
           <h5 class="pt-1 font-weight-bold">{{ item.title}}</h5>

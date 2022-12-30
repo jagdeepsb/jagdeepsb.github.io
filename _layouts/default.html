@@ -211,10 +211,26 @@
           scrollPoint = 0;
         }
         $('body,html').animate({
-        scrollTop: scrollPoint
-      }, 500);
-      return false;
+          scrollTop: scrollPoint
+        }, 500);
+        return false;
     })
+
+    // in document links
+    $("body").on("click", "a[data-href]", function() {
+      var href = $(this).data("href");
+      console.log(href);
+      if (href) {
+        var scrollPoint = $(href).offset().top - 75;
+        if (href == selectors[0]){
+          scrollPoint = 0;
+        }
+        $('body,html').animate({
+          scrollTop: scrollPoint
+        }, 500);
+        return false;
+      }
+    });
 
     function activate(element){
       $(element).addClass('navbar-active');
