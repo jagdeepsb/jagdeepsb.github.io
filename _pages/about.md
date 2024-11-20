@@ -30,41 +30,57 @@ nav: about
       <h3 class="pb-1" id="ABOUT">Jagdeep S. Bhatia</h3>
       <h5 class="pb-3"><i class="fas fa-robot"  style="font-size: .77em;"></i> &nbsp; + &nbsp; <i class="fas fa-project-diagram" style="font-size: .67em;"></i>&nbsp; @  MIT</h5>
       <div style="">
-        <h6 class="pb-1 text-left">Currently:&nbsp;&nbsp;
-          <a href="https://www.mit.edu/" target="_blank">MIT</a>&nbsp;&nbsp;|&nbsp;
-          <a href="https://www.csail.mit.edu/" target="_blank">CSAIL</a>
+        <h6 class="pb-1 text-left">Currently: &nbsp;&nbsp; applying to PhD programs!
+          <!-- <p>applying to PhD programs!</p> -->
+          <!-- <a href="https://www.mit.edu/" target="_blank">MIT</a>&nbsp;&nbsp;|&nbsp;
+          <a href="https://www.csail.mit.edu/" target="_blank">CSAIL</a> -->
         </h6>
         <h6 class="pb-1 text-left">Previously:&nbsp;&nbsp;
-          <a href="https://scale.com/" target="_blank">Scale AI</a>&nbsp;&nbsp;|&nbsp;
-          <a href="https://themisai.io/" target="_blank">Themis AI</a>
+          <a href="https://emberml.com/" target="_blank">Ember ML</a>&nbsp;&nbsp;|&nbsp;
+          <a href="https://scale.com/" target="_blank">Scale AI</a>
+          <!-- <a href="https://themisai.io/" target="_blank">Themis AI</a> -->
         </h6>
       </div>
     </div>
     <div class='about-column summary-about-column'>
       <h1 class="title mb-4 p-0">about me</h1>
-      <p>
-        Hi! I'm a Junior at MIT thinking about &nbsp; 1) planning and learning in robotics and  &nbsp; 2) 
+      <!-- <p>
+        Hi! I'm a Senior at MIT thinking about &nbsp; 1) planning and learning in robotics and  &nbsp; 2) 
         <a data-href="#NEURALHASH">AI security and safety</a>.
+      </p> -->
+      <p>
+        Hi! I'm an MEng at
+        <a href="https://www.csail.mit.edu/" target="_blank">MIT CSAIL</a>
+        advised by 
+        <a href="https://people.csail.mit.edu/pulkitag/" target="_blank">Pulkit Agrawal</a>.
+      </p>
+      <p>
+      I'm interested in building useful, dexterous robots. To navigate our world's complexity and unpredictability, we need AI systems that continuously adapt and improve beyond their training. Therefore, I'm excited about harmonizing learning at scale with reasoning, search, and planning.
       </p>
       <p>
         I'm really proud of 
         <a data-href="#EVOGYM">EvoGym</a>, 
-        a tool for soft robot design and control co-optimization which I built with 
-        <a href="https://cdfg.mit.edu/" target="_blank">CDFG @ MIT</a>.
-        EvoGym was featured in Scientific American, Wired, Forbes, IEEE Spectrum, and MIT News!
+        a tool for soft robot design and control co-optimization 
+        <!-- which I built with 
+        <a href="https://cdfg.mit.edu/" target="_blank">CDFG @ MIT</a>. -->
+        which was featured in 
+        <a href="https://www.scientificamerican.com/article/evolution-gym-sculpts-novel-robot-bodies-and-brains/" target="_blank">Scientific American</a>,
+        <a href="https://www.wired.com/story/see-little-robots-get-swole-in-this-virtual-gym/" target="_blank">Wired</a>,
+        <a href="https://news.mit.edu/2021/system-designing-training-intelligent-soft-robots-1207" target="_blank">MIT News</a>, and
+        <a href="https://spectrum.ieee.org/robot-design" target="_blank">IEEE Spectrum</a>!
       </p>
       <p>
         Outside of research, I co-founded 
         <a href="https://momentumai.org/" target="_blank">Momentum AI</a>, 
-        an education nonprofit dedicated to teaching AI to underserved high-schoolers. I also enjoy running, 
-        <a data-href="#MAKE">making</a>,
-        playing card games, and inventing bad puns.
+        an education nonprofit dedicated to teaching AI to underserved high-schoolers. I also enjoy
+        <a data-href="#MAKE">making</a>, running, playing
+        <a href="https://en.wikipedia.org/wiki/The_Resistance_(game)" target="_blank">Avalon</a>, and inventing bad puns.
       </p>
-      <h5 class="pt-1 font-weight-bold">interests</h5>
+      <!-- <h5 class="pt-1 font-weight-bold">interests</h5>
       <ul>
         <li>planning and learning for robotics</li>
         <li>AI systems security</li>
-      </ul>
+      </ul> -->
     </div>
   </div>
 </div>
