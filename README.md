@@ -2,6 +2,40 @@
 
 See it here [https://jagdeepsb.github.io/](https://jagdeepsb.github.io/).
 
+## Install Instructions
+
+From within WSL,
+```bash
+./bin/deployp1
+```
+
+In windows
+```
+bundle exec jekyll build
+```
+
+```bash
+./bin/deployp2
+```
+
+### You may need this Gem File
+```
+source 'https://rubygems.org'
+
+# Use github-pages gem without specifying an old version
+gem 'github-pages', group: :jekyll_plugins
+
+group :jekyll_plugins do
+  gem 'jekyll-paginate'
+  gem 'jemoji'
+  gem 'unicode'
+end
+
+# jekyll-scholar is not supported by GitHub Pages by default
+# If you need it, you'll need to build locally and push the generated site
+gem 'jekyll-scholar', group: :jekyll_plugins
+```
+
 ## How to use this template for your website
 
 This website was designed using the "al-folio" [Jekyll](https://jekyllrb.com/) theme for academics.
