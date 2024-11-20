@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2NRC8J8B9G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-2NRC8J8B9G');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Jagdeep Bhatia | Raised Garden Beds</title>
+  <meta name="description" content="Jagdeep's personal website. Come see what I'm working on and what I'm interested in!">
+
+  <!-- Fonts and Icons -->
+  <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons" /> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/assets/img/favicon3.ico" />
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="/assets/css/all.min.css">
+  <!-- <link rel="stylesheet" href="/assets/css/academicons.min.css"> -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="/making/wood/">
+</head>
+<body>
+  <!-- Header -->
+  <nav id="navbar" class="navbar fixed-top navbar-expand-md grey lighten-5 z-depth-1 navbar-light">
+    <div class="container-fluid p-0">
+      
+        <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">Jagdeep</span> S Bhatia</a>
+      
+      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <li class="nav-item navbar-active font-weight-bold" id="NAV_ABOUT">
+            <a class="nav-link"> <!-- href="#ABOUT"> -->
+              about
+              <!--  -->
+            </a>
+          </li>
+          <li class="nav-item" id="NAV_NEWS">
+            <a class="nav-link">  <!-- href="#NEWS"> -->
+              news
+            </a>
+          </li>
+          <li class="nav-item" id="NAV_PROJ">
+            <a class="nav-link"> <!-- href="#PUB"> -->
+              projects
+            </a>
+          </li>
+          <li class="nav-item" id="NAV_MAKE">
+            <a class="nav-link">
+              fun!
+            </a>
+          </li>
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="/">
+              about
+              
+            </a>
+          </li> -->
+          <!-- 
+            
+          
+            
+          
+            
+              <li class="nav-item ">
+                  <a class="nav-link" href="/projects/">
+                    projects
+                    
+                  </a>
+              </li>
+            
+          
+            
+           -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Scrolling Progress Bar -->
+  <progress id="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+
+  <!-- Content -->
+  <div class="content">
+    
+  <h1>Raised Garden Beds</h1>
+  <h6></h6>
+
+
+<p>Built some raised garden beds for my backyard. This was during COVID so I had a lot of time on my hands… We’ve since grown lots of veggies, but the tomatoes always turn out best!</p>
+
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <!-- &copy; Copyright 2024 Jagdeep Bhatia. -->
+    <!--  -->
+    
+      <!-- Last updated: true. -->
+      Last updated: Nov 2024.
+    
+  </footer>
+
+  <!-- Core JavaScript Files -->
+  <script src="/assets/js/jquery.min.js" type="text/javascript"></script>
+  <script src="/assets/js/popper.min.js" type="text/javascript"></script>
+  <script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
+  <script src="/assets/js/mdb.min.js" type="text/javascript"></script>
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
+  <script src="/assets/js/common.js"></script>
+
+  <!-- Scrolling Progress Bar -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var navbarHeight = $('#navbar').outerHeight(true);
+      $('body').css({ 'padding-top': navbarHeight });
+      $('progress-container').css({ 'padding-top': navbarHeight });
+      var progressBar = $('#progress');
+      progressBar.css({ 'top': navbarHeight });
+      var getMax = function() { return $(document).height() - $(window).height(); }
+      var getValue = function() { return $(window).scrollTop(); }   
+      // Check if the browser supports the progress element.
+      if ('max' in document.createElement('progress')) {
+        // Set the 'max' attribute for the first time.
+        progressBar.attr({ max: getMax() });
+        progressBar.attr({ value: getValue() });
+    
+        $(document).on('scroll', function() {
+          // On scroll only the 'value' attribute needs to be calculated.
+          progressBar.attr({ value: getValue() });
+        });
+
+        $(window).resize(function() {
+          var navbarHeight = $('#navbar').outerHeight(true);
+          $('body').css({ 'padding-top': navbarHeight });
+          $('progress-container').css({ 'padding-top': navbarHeight });
+          progressBar.css({ 'top': navbarHeight });
+          // On resize, both the 'max' and 'value' attributes need to be calculated.
+          progressBar.attr({ max: getMax(), value: getValue() });
+        });
+      } else {
+        var max = getMax(), value, width;
+        var getWidth = function() {
+          // Calculate the window width as a percentage.
+          value = getValue();
+          width = (value/max) * 100;
+          width = width + '%';
+          return width;
+        }
+        var setWidth = function() { progressBar.css({ width: getWidth() }); };
+        setWidth();
+        $(document).on('scroll', setWidth);
+        $(window).on('resize', function() {
+          // Need to reset the 'max' attribute.
+          max = getMax();
+          setWidth();
+        });
+      }
+    });
+  </script>
+
+
+  <!-- Scrolling Nav Elements -->
+  <script type="text/javascript">
+    var selectors = ['#ABOUT', '#NEWS', '#PROJ', '#MAKE'];
+    var menu_items = ['#NAV_ABOUT', '#NAV_NEWS', '#NAV_PROJ', '#NAV_MAKE'];
+
+    // $(document).ready(function() {
+    //   $(".nav li a").removeClass("active");
+    // });
+
+    $('nav div div li').on('click', function() {
+        console.log(this.id)
+
+        target_id = '#' + this.id;
+        target_id_idx = 0;
+        for (var i = 0; i < menu_items.length; i++){
+          if (menu_items[i] == target_id){
+            target_id_idx = i;
+            break;
+          }
+        }
+      // var scrollAnchor = $(this).attr('data-scroll'),
+        // scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top - 28;
+        var scrollPoint = $(selectors[target_id_idx]).offset().top - 75;
+        if (target_id_idx == 0){
+          scrollPoint = 0;
+        }
+        $('body,html').animate({
+          scrollTop: scrollPoint
+        }, 500);
+        return false;
+    })
+
+    // in document links
+    $("body").on("click", "a[data-href]", function() {
+      var href = $(this).data("href");
+      console.log(href);
+      if (href) {
+        var scrollPoint = $(href).offset().top - 75;
+        if (href == selectors[0]){
+          scrollPoint = 0;
+        }
+        $('body,html').animate({
+          scrollTop: scrollPoint
+        }, 500);
+        return false;
+      }
+    });
+
+    function activate(element){
+      $(element).addClass('navbar-active');
+      $(element).addClass('font-weight-bold');
+    }
+    function deactivate(element){
+      $(element).removeClass('navbar-active');
+      $(element).removeClass('font-weight-bold');
+    }
+
+
+    $(window).scroll(function() {
+      var windscroll = $(window).scrollTop();
+      var max_scroll = $(document).height() - $(window).height();
+      var last = selectors.length - 1;
+      var total_content_length = $(selectors[last]).offset().top + 100; //$(selectors[last]).height();
+      if ($(selectors[last]).height() > $(window).height()/2){
+        total_content_length = $(selectors[last]).offset().top + $(selectors[last]).height();
+      }
+
+      curr_selector = 0;
+      for (var i = 0; i < selectors.length; i++){
+        var selector_scroll = $(selectors[i]).offset().top - 50;
+        if (windscroll/max_scroll >= selector_scroll/total_content_length){
+          curr_selector = i;
+        }
+      }
+      //console.log("cscroll: " + windscroll + "| sel: " + curr_selector +  " | " + ($(selectors[0]).offset().top - 50) + " | " + ($(selectors[1]).offset().top - 50) + " | " + max_scroll + " | " + total_content_length);
+      // console.log(curr_selector);
+      for (var i = 0; i < selectors.length; i++){
+        if (curr_selector == i){
+          activate(menu_items[i]);
+        }
+        else{
+          deactivate(menu_items[i]);
+        }
+      }
+
+    }).scroll();
+  </script>
+
+  <!-- Code Syntax Highlighting -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+  <script src="/assets/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <!-- Script Used for Randomizing the Projects Order -->
+  <!-- <script type="text/javascript">
+    $.fn.shuffleChildren = function() {
+      $.each(this.get(), function(index, el) {
+        var $el = $(el);
+        var $find = $el.children();
+
+        $find.sort(function() {
+          return 0.5 - Math.random();
+        });
+
+        $el.empty();
+        $find.appendTo($el);
+      });
+    };
+    $("#projects").shuffleChildren();
+  </script> -->
+
+  <!-- Project Cards Layout -->
+  <script type="text/javascript">
+    var $grid = $('#projects');
+
+    // $grid.masonry({ percentPosition: true });
+    // $grid.masonry('layout');
+
+    // Trigger after images load.
+    $grid.imagesLoaded().progress(function() {
+      $grid.masonry({ percentPosition: true });
+      $grid.masonry('layout');
+    });
+  </script>
+
+  <!-- Enable Tooltips -->
+  <script type="text/javascript">
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+
+  <!-- Google Analytics -->
+  <!-- <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+  </script> -->
+
+</body>
+</html>
