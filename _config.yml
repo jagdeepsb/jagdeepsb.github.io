@@ -88,6 +88,9 @@ markdown: kramdown
 # Includes
 include: ['_pages']
 
+# Excludes (kept out of the built _site)
+exclude: ['CLAUDE.md']
+
 # Plugins
 plugins:
   - jekyll-paginate

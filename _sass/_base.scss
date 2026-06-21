@@ -30,7 +30,7 @@ $grey-color-light:  #ddd;  /* navigation bar border */
 $text-color:        rgb(33, 40, 48); //rgb(60, 72, 88); /* #666; */
 
 /* Set theme color *************************/
-$theme-color: $burgundy; /* #b71c1c; */
+$theme-color: #9F3267; // rgb(159, 50, 103)
 $background-color: #fdfdfd;
 
 /************************************************************/
@@ -307,4 +307,232 @@ nobr > em {
     font-weight: bold;
     font-style: normal;
     color: $theme-color;
+}
+
+/* ============================================================
+   2026 refresh
+   ============================================================ */
+
+// Use Inter for body text (loaded via Google Fonts in default.html);
+// titles keep Roboto Slab via the .title class.
+body {
+    font-family: "Inter", Helvetica, Arial, sans-serif;
+}
+
+// Circular, consistently-cropped profile photo regardless of source ratio.
+.image-cropper img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+// Text contact links under the photo (replaces the social icons).
+.social-links {
+    text-align: center;
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+
+    a {
+        color: $theme-color;
+        margin: 0 0.35rem;
+        white-space: nowrap;
+
+        &:hover { text-decoration: underline; }
+    }
+}
+
+.email-obf {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+    letter-spacing: 0.2px;
+
+    span { color: #bbb; padding: 0 1px; }
+
+    .addr-kern { font-size: 0; letter-spacing: 0; padding: 0; }
+}
+
+// Invisible to sighted users, but present in the DOM/source text.
+.llm-note {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0 !important;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+// Crop oversized project images/gifs to a consistent, compact card size.
+.project-list-img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+// Content box sits slightly wider than the header/nav (which stays at 1000px).
+.content {
+    max-width: 1120px;
+}
+
+// Project list: a theme-colored vertical accent bar on the left frames each
+// paper as its own block, with a subtle gray hairline dividing entries —
+// a clean, professional way to structure the section.
+.proj-row {
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 12px;
+    padding: 16px 0 7px 22px;
+    border-left: 3px solid $theme-color;
+
+    // Compact, ordered typography: title, desc, authors, badges, read more.
+    .proj-title { font-size: 1.22rem; margin-bottom: 3px; }
+    .proj-desc  { font-size: 1.02rem; margin-bottom: 5px; }
+    .author     { font-size: 0.88rem; line-height: 1.4; margin-bottom: 7px; }
+    .proj-badges {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 0;
+    }
+    .proj-list-badge { font-size: 12.5px; }
+
+    // Centered gray hairline (middle 88%) divides consecutive entries.
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 6%;
+        width: 88%;
+        height: 1px;
+        background: #ececec;
+    }
+
+    &:first-child {
+        padding-top: 6px;
+        &::before { display: none; }
+    }
+}
+
+// "back home" link on the fun page: keep the theme color and only underline on
+// hover (matching the "read more" toggle), instead of MDB's default blue hover.
+.back-home {
+    color: $theme-color;
+    white-space: nowrap;
+
+    &:hover {
+        color: $theme-color;
+        text-decoration: underline;
+    }
+}
+
+// About-me prose links: keep the theme color and underline on hover instead of
+// MDB's default blue hover (matches the "making"/back-home link behavior).
+.summary-about-column a {
+    color: $theme-color;
+
+    &:hover {
+        color: $theme-color;
+        text-decoration: underline;
+    }
+}
+
+// "fun" page: a panel per project with all images shown at once (masonry).
+.fun-card {
+    background: #fff;
+    border: 1px solid #ececec;
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-bottom: 28px;
+    box-shadow: rgba(60, 64, 67, 0.12) 0px 1px 2px 0px, rgba(60, 64, 67, 0.08) 0px 1px 3px 1px;
+    // When jumped to via an anchor, stop short of the fixed navbar (56px) so
+    // the card's title clears it instead of hiding behind it.
+    scroll-margin-top: 76px;
+}
+
+.fun-card h4 { font-family: "Roboto Slab", "Times New Roman", serif; }
+
+.fun-card-text { margin-bottom: 8px; }
+
+.fun-gallery {
+    column-count: 3;
+    column-gap: 10px;
+    margin-top: 12px;
+
+    img {
+        width: 100%;
+        margin: 0 0 10px;
+        border-radius: 6px;
+        break-inside: avoid;
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .fun-gallery { column-count: 2; }
+}
+
+// Expandable project descriptions.
+.proj-toggle {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $theme-color;
+    cursor: pointer;
+
+    &:hover { text-decoration: underline; }
+
+    .less { display: none; }
+    &[aria-expanded="true"] {
+        .more { display: none; }
+        .less { display: inline; }
+    }
+}
+
+// Nav items act as scroll triggers (no href) — show a pointer.
+.navbar-nav .nav-link { cursor: pointer; }
+
+// "fun" teaser strip on the home page.
+.fun-teasers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.fun-teaser {
+    flex: 1 1 140px;
+    max-width: 220px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
+    img {
+        width: 100%;
+        height: 130px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.25s ease;
+    }
+
+    .fun-teaser-label {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 14px 8px 6px;
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: #fff;
+        line-height: 1.15;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.72));
+    }
+
+    &:hover img { transform: scale(1.05); }
 }

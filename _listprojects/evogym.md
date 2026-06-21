@@ -1,12 +1,12 @@
 ---
 layout: page
 date: 2021-12-15
-title: Building A Tool for Soft Robot Design and Control Co-optimization
+title: "Evolution Gym: A Large-Scale Benchmark for Evolving Soft Robots"
 ref: EVOGYM
-# desc: Computer Vision research on automatic discovery of foreground objects in videos.
+desc: Building A Tool for Soft Robot Design and Control Co-optimization
 img: evogym_crop.gif
 # redirect: https://sites.google.com/site/multipleframesmatching/
-pub: NeurIPS
+pub: NeurIPS 2021
 pdf: "evogym neurips 2021.pdf"
 website: https://evolutiongym.github.io/
 arxiv: "2201.09863"

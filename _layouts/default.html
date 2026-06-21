@@ -19,7 +19,9 @@
   <meta name="description" content="{{ site.description }}">
 
   <!-- Fonts and Icons -->
-  <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons" /> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Slab:wght@500;700;900&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
@@ -36,20 +38,7 @@
   <!-- Header -->
   <nav id="navbar" class="navbar fixed-top navbar-expand-md grey lighten-5 z-depth-1 navbar-light">
     <div class="container-fluid p-0">
-      {% if page.title != "about" %}
-        <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl | prepend: site.url }}/"><span class="font-weight-bold">Jagdeep</span> S Bhatia</a>
-      {% else %}
-        <div class="row ml-1 ml-sm-0">
-          <span class="contact-icon text-center" style="line-height: 1em;">
-            <a href="mailto:{{ site.email }}"><i class="fa fa-envelope-square gm-icon"></i></a>
-            <a href="https://scholar.google.com/citations?userid={{ site.scholar_userid }}&user={{ site.scholar_userid }}" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar-square gs-icon"></i></a>
-            <a href="https://www.github.com/{{ site.github_username }}" target="_blank" title="GitHub"><i class="fab fa-github-square gh-icon"></i></a>
-            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank" title="LinkedIn"><i class="fab fa-linkedin li-icon"></i></a>
-            <!-- <a href="https://www.facebook.com/{{ site.facebook_username }}" target="_blank" title="Facebook"><i class="fab fa-facebook-square fb-icon"></i></a> -->
-            <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank" title="Twitter"><i class="fab fa-twitter-square tw-icon"></i></a>
-          </span>
-        </div>
-      {% endif %}
+      <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl | prepend: site.url }}/">Jagdeep Singh Bhatia</a>
       <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -61,11 +50,6 @@
               <!-- {% if page.title == "about" %}
                 <span class="sr-only">(current)</span>
               {% endif %} -->
-            </a>
-          </li>
-          <li class="nav-item" id="NAV_NEWS">
-            <a class="nav-link">  <!-- href="#NEWS"> -->
-              news
             </a>
           </li>
           <li class="nav-item" id="NAV_PROJ">
@@ -188,8 +172,8 @@
 
   <!-- Scrolling Nav Elements -->
   <script type="text/javascript">
-    var selectors = ['#ABOUT', '#NEWS', '#PROJ', '#MAKE'];
-    var menu_items = ['#NAV_ABOUT', '#NAV_NEWS', '#NAV_PROJ', '#NAV_MAKE'];
+    var selectors = ['#ABOUT', '#PROJ', '#MAKE'];
+    var menu_items = ['#NAV_ABOUT', '#NAV_PROJ', '#NAV_MAKE'];
 
     // $(document).ready(function() {
     //   $(".nav li a").removeClass("active");
@@ -208,6 +192,7 @@
         }
       // var scrollAnchor = $(this).attr('data-scroll'),
         // scrollPoint = $('section[data-anchor="' + scrollAnchor + '"]').offset().top - 28;
+        if (!$(selectors[target_id_idx]).length){ return; }
         var scrollPoint = $(selectors[target_id_idx]).offset().top - 75;
         if (target_id_idx == 0){
           scrollPoint = 0;
@@ -245,6 +230,7 @@
 
 
     $(window).scroll(function() {
+      if (!$(selectors[0]).length){ return; }
       var windscroll = $(window).scrollTop();
       var max_scroll = $(document).height() - $(window).height();
       var last = selectors.length - 1;

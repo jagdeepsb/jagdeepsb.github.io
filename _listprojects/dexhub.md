@@ -1,12 +1,12 @@
 ---
 layout: page
 date: 2024-11-15
-title: Scaling Robot Data Collection with Augmented Reality
+title: "DexHub and DART: Towards Internet Scale Robot Data Collection"
 ref: DEXHUB
-# desc: Computer Vision research on automatic discovery of foreground objects in videos.
+desc: Scaling Robot Data Collection with Augmented Reality
 img: dexhub.gif
 # redirect: https://sites.google.com/site/multipleframesmatching/
-pub: CoRL, ICRA (Pending)
+pub: ICRA 2024
 # pdf: "evogym neurips 2021.pdf"
 arxiv: "2411.02214"
 website: https://dexhub.ai/project
